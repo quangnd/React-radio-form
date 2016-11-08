@@ -1,5 +1,27 @@
-import React from 'react';
+import React, { PropTypes } from 'react'
 
+//Stateless Functional Components
+const RadioOption = ({name, value, onChange, label}) => {  
+        return (
+            <label className="radio-inline">
+                <input type="radio"
+                    name={name}
+                    value={value}
+                    onChange={onChange} />
+                {label}
+             </label>
+        );  
+}
+
+
+RadioOption.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired
+}
+
+//Stateless Components
+/*
 class RadioOption extends React.Component {
     render() {
         return (
@@ -13,5 +35,6 @@ class RadioOption extends React.Component {
         );
     }
 }
+*/
 
 export default RadioOption;

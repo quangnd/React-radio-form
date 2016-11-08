@@ -54,15 +54,18 @@ class QuizPage extends React.Component {
         return (
             <form onSubmit={this.handleFormSubmit}>
                 <div>
-                    Test Radio Group Component
+                    <div className="statement">
+                        <h2> Test Radio Group Component</h2>
+                    </div>
+                   
                     <RadioGroup name="questionx">
-                        <RadioOption label="Warcraft 2" value="wc2" />
-                        <RadioOption label="Warcraft 3" value="wc3" />
-                        <RadioOption label="Starcraft 1" value="sc1" />
-                        <RadioOption label="Starcraft 2" value="sc2" />
+                        <RadioOption label="Warcraft 2" value="wc2" onChange={this.handleOptionChange}  />
+                        <RadioOption label="Warcraft 3" value="wc3" onChange={this.handleOptionChange} />
+                        <RadioOption label="Starcraft 1" value="sc1" onChange={this.handleOptionChange} />
+                        <RadioOption label="Starcraft 2" value="sc2" onChange={this.handleOptionChange} />
                     </RadioGroup>
                 </div>
-                
+
                 <div className="statement">
                     <h2>1. Did you love me?</h2>
                 </div>
