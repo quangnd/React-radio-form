@@ -1,0 +1,121 @@
+{
+  "_args": [
+    [
+      "perfect-scrollbar@^0.6.7",
+      "/Users/mun/Downloads/Ani-React-Theme"
+    ]
+  ],
+  "_from": "perfect-scrollbar@>=0.6.7 <0.7.0",
+  "_id": "perfect-scrollbar@0.6.13",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/perfect-scrollbar",
+  "_nodeVersion": "4.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/perfect-scrollbar-0.6.13.tgz_1476777414714_0.4369045563507825"
+  },
+  "_npmUser": {
+    "email": "me@noraesae.net",
+    "name": "noraesae"
+  },
+  "_npmVersion": "2.15.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "perfect-scrollbar",
+    "raw": "perfect-scrollbar@^0.6.7",
+    "rawSpec": "^0.6.7",
+    "scope": null,
+    "spec": ">=0.6.7 <0.7.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/perfect-scrollbar/-/perfect-scrollbar-0.6.13.tgz",
+  "_shasum": "53c6fbf6984bcf000c77e3aa6156ca8754a0116f",
+  "_shrinkwrap": null,
+  "_spec": "perfect-scrollbar@^0.6.7",
+  "_where": "/Users/mun/Downloads/Ani-React-Theme",
+  "author": {
+    "email": "me@noraesae.net",
+    "name": "Hyunje Alex Jun"
+  },
+  "bugs": {
+    "url": "https://github.com/noraesae/perfect-scrollbar/issues"
+  },
+  "contributors": [
+    {
+      "email": "me@noraesae.net",
+      "name": "Hyunje Alex Jun"
+    }
+  ],
+  "dependencies": {},
+  "description": "Minimalistic but perfect custom scrollbar plugin",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "del": "^2.0.2",
+    "event-stream": "^3.3.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.1",
+    "gulp-zip": "^3.0.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "53c6fbf6984bcf000c77e3aa6156ca8754a0116f",
+    "tarball": "https://registry.npmjs.org/perfect-scrollbar/-/perfect-scrollbar-0.6.13.tgz"
+  },
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "files": [
+    "dist",
+    "src",
+    "index.js",
+    "jquery.js"
+  ],
+  "gitHead": "6d2f2034416bf5a816ae41ee0a4426b461f99b08",
+  "homepage": "https://github.com/noraesae/perfect-scrollbar#readme",
+  "jspm": {
+    "dependencies": {
+      "jquery": "npm:jquery"
+    },
+    "main": "./index.js"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "frontend",
+    "scroll",
+    "scrollbar"
+  ],
+  "license": "MIT",
+  "main": "./index.js",
+  "maintainers": [
+    {
+      "email": "me@noraesae.net",
+      "name": "noraesae"
+    }
+  ],
+  "name": "perfect-scrollbar",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noraesae/perfect-scrollbar.git"
+  },
+  "scripts": {
+    "before-deploy": "gulp && gulp compress",
+    "release": "rm -rf dist && gulp && npm publish",
+    "test": "gulp"
+  },
+  "typings": "perfect-scrollbar.d.ts",
+  "version": "0.6.13"
+}
