@@ -60,7 +60,7 @@ const questions = [
         "text": "Always"
       }
     ]
-  },
+  }
 ]
 
 ReactDOM.render(

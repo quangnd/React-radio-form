@@ -1,13 +1,15 @@
 import React from 'react'
 import RadioOption from './common/RadioOption'
 import RadioGroup from './common/RadioGroup'
+import Results from './Results'
 
 class QuizPage extends React.Component {
     constructor() {
         super();
         this.state = {
             formValues: [],
-            result: {}
+            result: [],
+            resultText: ''
         }
 
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -45,126 +47,43 @@ class QuizPage extends React.Component {
 
     }
 
-    handleFormSubmit() {
-
+    handleFormSubmit(e) {
+        e.preventDefault();
+        
+        this.setState({
+            result: this.state.formValues
+        })
     }
 
     render() {
+        const questions = this.props.questions
 
+        if (this.state.result.length > 0) {
+            return  <Results results={this.state.result}/>
+        }
+        
         return (
             <form onSubmit={this.handleFormSubmit}>
-                <div>
-                    <div className="statement">
-                        <h2> Test Radio Group Component</h2>
-                    </div>
-                   
-                    <RadioGroup name="questionx">
-                        <RadioOption label="Warcraft 2" value="wc2" onChange={this.handleOptionChange}  />
-                        <RadioOption label="Warcraft 3" value="wc3" onChange={this.handleOptionChange} />
-                        <RadioOption label="Starcraft 1" value="sc1" onChange={this.handleOptionChange} />
-                        <RadioOption label="Starcraft 2" value="sc2" onChange={this.handleOptionChange} />
-                    </RadioGroup>
-                </div>
-
-                <div className="statement">
-                    <h2>1. Did you love me?</h2>
-                </div>
-                <div className="radio">
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question1"
-                            value="1"
-                            onChange={this.handleOptionChange} />
-                        No
-                   </label>
-
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question1"
-                            value="2"
-
-                            onChange={this.handleOptionChange} />
-                        Sometimes
-                 </label>
-
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question1"
-                            value="3"
-
-                            onChange={this.handleOptionChange} />
-                        Always
-                   </label>
-                </div>
-
-                <div className="statement">
-                    <h2>2. Am I Good?</h2>
-                </div>
-                <div className="radio">
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question2"
-                            value="1"
-
-                            onChange={this.handleOptionChange} />
-                        No
-                   </label>
-
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question2"
-                            value="2"
-
-                            onChange={this.handleOptionChange} />
-                        Enough
-                 </label>
-
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question2"
-                            value="3"
-
-                            onChange={this.handleOptionChange} />
-                        Great
-                   </label>
-                </div>
-
-                <div className="statement">
-                    <h2>3. Can you talk with me all day long?</h2>
-                </div>
-                <div className="radio">
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question3"
-                            value="1"
-
-                            onChange={this.handleOptionChange} />
-                        No
-                   </label>
-
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question3"
-                            value="2"
-
-                            onChange={this.handleOptionChange} />
-                        Enough
-                 </label>
-
-                    <label className="radio-inline">
-                        <input type="radio"
-                            name="question3"
-                            value="3"
-
-                            onChange={this.handleOptionChange} />
-                        Great
-                   </label>
-                </div>
+                    {questions.map(ques => {
+                            return ( 
+                                 <div key={ques.id}>
+                                    <div className="statement">
+                                        <h2> {ques.title}</h2>
+                                    </div>
+                                    <RadioGroup name={ques.name} key={ques.id}>
+                                        {ques.choices.map( choice => {
+                                            return <RadioOption  key={choice.value} label={choice.text} value={choice.value} onChange={this.handleOptionChange}/>
+                                        })}              
+                                    </RadioGroup>
+                                </div>
+                            )
+                        })
+                    }
 
                 <button className="btn btn-default" type="submit">Save</button>
-
             </form>
 
+           
         )
     }
 }

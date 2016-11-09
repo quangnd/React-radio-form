@@ -1,20 +1,17 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-class Results extends React.Component {
+const Results = (props) => {
+    return(
+        <ul>
+            {props.results.map(result => {
+                return <li key={result.id}>{result.name} has value is: {result.value}</li>
+            })}
+        </ul>
+    )
+}
 
-    render() {
-        console.log(this.props.data);
-        return(
-            <div>
-            dfsadfsf
-            <ul>
-                {this.props.data.map(ques => {
-                <li>  fsdfs  {ques.name} has value is: {ques.value}</li>
-                })}
-            </ul>
-            </div>
-        )
-    }
+Results.propTypes = {
+    results: PropTypes.array.isRequired
 }
 
 export default Results;
