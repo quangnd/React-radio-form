@@ -64,8 +64,7 @@ class QuizPage extends React.Component {
         
         return (
             <form onSubmit={this.handleFormSubmit}>
-                    {questions.map(ques => {
-                            return ( 
+                    {questions.map(ques => (
                                  <div key={ques.id}>
                                     <div className="statement">
                                         <h2> {ques.title}</h2>
@@ -77,7 +76,7 @@ class QuizPage extends React.Component {
                                     </RadioGroup>
                                 </div>
                             )
-                        })
+                        )
                     }
 
                 <button className="btn btn-default" type="submit">Save</button>

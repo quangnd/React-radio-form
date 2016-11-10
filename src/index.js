@@ -20,6 +20,11 @@ const questions = [
       {
         "value": "3",
         "text": "Always"
+      },
+
+      {
+        "value": "-3",
+        "text": "xx"
       }
     ]
   },
