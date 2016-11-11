@@ -121,7 +121,7 @@ const questions = [
 ]
 
 ReactDOM.render(
-  <App questions={questions}/>,
+  <App questions={questions} initPage={"start"}/>,
   document.getElementById('root')
 );
 

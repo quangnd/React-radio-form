@@ -1,0 +1,72 @@
+{
+    "nameEng": "Hobby list",
+    "nameVi": "Danh mục sở thích",
+    "list": [
+        {
+            "id": 1,
+            "hobbyEng": "Playing sports, including swimming and other athletics",
+            "hobbyVi": ""
+        },
+        {
+            "id": 2,
+            "hobbyEng": "Outdoor activities, such as hiking, kayaking, etc.",
+            "hobbyVi": ""
+        },
+        {
+            "id": 3,
+            "hobbyEng": "Dancing",
+            "hobbyVi": ""
+        },
+        {
+            "id": 4,
+            "hobbyEng": "Painting, drawing, or other forms of art",
+            "hobbyVi": ""
+        },
+        {
+            "id": 5,
+            "hobbyEng": "Theatricals, acting of any sorts",
+            "hobbyVi": ""
+        },
+        {
+            "id": 6,
+            "hobbyEng": "Playing games (computer)",
+            "hobbyVi": ""
+        },
+        {
+            "id": 7,
+            "hobbyEng": "Playing games (offline)",
+            "hobbyVi": ""
+        },
+        {
+            "id": 8,
+            "hobbyEng": "Reading books, or research materials",
+            "hobbyVi": ""
+        },
+        
+        {
+            "id": 9,
+            "hobbyEng": "Reading magazines, pamphlets, or other materials that may be more image- than text-based",
+            "hobbyVi": ""
+        },
+        {
+            "id": 10,
+            "hobbyEng": "Socializing with friends of any kinds",
+            "hobbyVi": ""
+        },
+        {
+            "id": 11,
+            "hobbyEng": "Spending time with family, be it meals, holidays, whatever",
+            "hobbyVi": ""
+        },
+        {
+            "id": 12,
+            "hobbyEng": "Engaging in public events, such as expos and other that interests you",
+            "hobbyVi": ""
+        },
+        {
+            "id": 13,
+            "hobbyEng": "Relaxing, either in your home or outside areas",
+            "hobbyVi": ""
+        }
+    ]
+}
