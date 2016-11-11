@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../lib/bootstrap/css/bootstrap.css';
 import logo from './logo.svg';
 import './App.css';
-import QuizPage from './QuizPage';
+import QuizContainer from './QuizContainer';
 
 class App extends Component {
 
@@ -19,7 +19,7 @@ class App extends Component {
           <div className="row">
             <div className="col-sm-12">
 
-              <QuizPage questions={this.props.questions}/>
+              <QuizContainer questions={this.props.questions}/>
              
             </div>
           </div>

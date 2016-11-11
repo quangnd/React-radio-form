@@ -20,11 +20,6 @@ const questions = [
       {
         "value": "3",
         "text": "Always"
-      },
-
-      {
-        "value": "-3",
-        "text": "xx"
       }
     ]
   },
@@ -51,6 +46,63 @@ const questions = [
     id: '3',
     name: 'question3',
     title: 'Can you talk with me all day long?',
+    choices: [  
+      {
+        "value": "1",
+        "text": "No"
+      },
+      {
+        "value": "2",
+        "text": "Sometimes"
+      },
+      {
+        "value": "3",
+        "text": "Always"
+      }
+    ]
+  },
+  {
+    id: '4',
+    name: 'question4',
+    title: 'How about me?',
+    choices: [  
+      {
+        "value": "1",
+        "text": "No"
+      },
+      {
+        "value": "2",
+        "text": "Sometimes"
+      },
+      {
+        "value": "3",
+        "text": "Always"
+      }
+    ]
+  },
+  {
+    id: '5',
+    name: 'question5',
+    title: 'Don\'t talk with me anymore?',
+    choices: [  
+      {
+        "value": "1",
+        "text": "No"
+      },
+      {
+        "value": "2",
+        "text": "Sometimes"
+      },
+      {
+        "value": "3",
+        "text": "Always"
+      }
+    ]
+  },
+  {
+    id: '6',
+    name: 'question6',
+    title: 'Did you make it?',
     choices: [  
       {
         "value": "1",
