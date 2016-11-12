@@ -9,6 +9,8 @@ const Results = (props) => {
                      <li key={result.id}>{result.name} has value is: {result.value}</li>
                 ))}
             </ul>
+
+            <a href="/">Back to Home</a>
         </div>
     )
 }
