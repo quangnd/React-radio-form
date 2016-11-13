@@ -10,23 +10,40 @@ import StartInformationContainer from './StartInformationContainer';
 class App extends Component {
   constructor() {
     super();
+
     this.state ={
-      isQuizWaked: false
+      userInformation: {},
+      currentStep: 1
     }
 
-    this.handleWakeQuizUp = this.handleWakeQuizUp.bind(this);
+    this.updateUserInfo = this.updateUserInfo.bind(this);
   }
 
-  handleWakeQuizUp(event) {
-    event.preventDefault();
-
+  updateUserInfo(userInfo) {
+    let userInformation = Object.assign({}, this.state.userInformation, userInfo); //for many steps if need
+    let currentStep = this.state.currentStep + 1;
     this.setState({
-      isQuizWaked: true
+      userInformation,
+      currentStep
     })
   }
 
   render() {
-    const isQuizWaked = this.state.isQuizWaked;
+    let initComponent;
+    switch(this.state.currentStep) {
+      case 1:
+        initComponent =  <StartInformationContainer subjects={subjectJson.list}
+                                            hobbies={hobbyJson.list} 
+                                            wakeQuizUp={this.handleWakeQuizUp}
+                                            updateUserInfo={this.updateUserInfo}/>;
+        break;
+      case 2:
+        initComponent = <QuizContainer questions={this.props.questions} 
+                                       userInfoData={this.state.userInformation.userInfo} />;
+        break;
+
+    }
+
     return (
       <div className="App">
         <div className="App-header">
@@ -37,15 +54,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-                             
-             {isQuizWaked
-               ? <QuizContainer questions={this.props.questions} />
-               : <StartInformationContainer subjects={subjectJson.list}
-                                            hobbies={hobbyJson.list} 
-                                            wakeQuizUp={this.handleWakeQuizUp}/>
-             }
-              
-             
+              {initComponent}          
             </div>
           </div>
         </div>

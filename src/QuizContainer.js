@@ -28,6 +28,8 @@ class QuizContainer extends React.Component {
              currentStep: 1,
              totalStep: questionsInit.length / perOnPage
          })
+
+         console.log(this.props.userInfoData);
     }
 
     handleNextClick(event) {
