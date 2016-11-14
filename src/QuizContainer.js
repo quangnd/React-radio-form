@@ -12,7 +12,8 @@ class QuizContainer extends React.Component {
             perOnPage: 3,
             currentStep: 1,
             totalStep: 0,
-            isLastStep: false
+            isLastStep: false,
+            userInfor: {}
         }
         
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -81,7 +82,8 @@ class QuizContainer extends React.Component {
         e.preventDefault();
         
         this.setState({
-            result: this.state.formValues
+            result: this.state.formValues,
+            userInfo: this.props.userInfoData
         })
     }
 
@@ -90,7 +92,7 @@ class QuizContainer extends React.Component {
         let isLastStep = this.state.isLastStep;
       
         if (this.state.result.length > 0) {
-            return  <Results results={this.state.result}/>
+            return  <Results results={this.state.result} userInfo={this.state.userInfo}/>
         }
         
         return (
