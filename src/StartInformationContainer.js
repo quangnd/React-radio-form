@@ -18,15 +18,46 @@ class StartInformationContainer extends React.Component {
          let errorStyle = {color: 'red'};
          return (
            <div style={errorStyle}>
-             {this.state.error}
+           
+             {this.state.error.map((error,i) => {
+                 return <p key={i}>{error}</p>
+             })}
+             
            </div>
     		 ); 
        }
     }
 
     validateInput() {
-        if (!this.state.userInfo.age) { //empty or undefined
-            this.setState({error: 'Please enter age'});
+        let errors = [];
+        let age = this.state.userInfo.age;
+        let gender = this.state.userInfo.gender;
+        let subjects = this.state.userInfo.subjects;
+        let subjectScores = this.state.userInfo.subjectScores;
+        let hobbies = this.state.userInfo.hobbies;
+
+       
+        if (!age) { //empty or undefined
+            errors.push('Please enter age');
+        }
+        if (isNaN(age)) {
+            errors.push('Age must be number');
+        }
+        if (!gender) {
+            errors.push('Please enter gender');
+        }
+        if (!subjects || subjects.length === 0) {
+            errors.push('You must choose at least a subject!');
+        } 
+        if (!subjectScores || subjectScores.length === 0) {
+            errors.push('You must choose at least a subject score!');
+        }
+        if (!hobbies || hobbies.length === 0) {
+            errors.push('You must choose at least a hobbie!');
+        }
+
+        if (errors.length > 0) { 
+            this.setState({error: errors});
         }
         else {
             this.setState({error: false})
@@ -88,7 +119,8 @@ class StartInformationContainer extends React.Component {
         userInfo.hobbies = hobbies;
         
         this.setState({
-            userInfo
+            userInfo,
+            error: false
         })
 
 
@@ -103,7 +135,8 @@ class StartInformationContainer extends React.Component {
             <StartInformation subjects={this.props.subjects} 
                               hobbies={this.props.hobbies}
                               onNextClick={this.handleNextClick} 
-                              onChange={this.handleChange}/>
+                              onChange={this.handleChange}
+                              errorMessage={errorMessage}/>
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import CheckBox from './common/CheckBox'
 
-const StartInformation = ({subjects, hobbies, onNextClick, onChange}) => {
+const StartInformation = ({subjects, hobbies, onNextClick, onChange,errorMessage}) => {
     return (
         <div >
             <h1> Bạn hãy điền những thông tin sau trước khi thực hiện bài test</h1>
@@ -43,6 +43,9 @@ const StartInformation = ({subjects, hobbies, onNextClick, onChange}) => {
                 <input type="text" className="form-control" name="otherHobby" id="otherHobby" placeholder="Nhập sở thích khác của bạn" onChange={onChange}/>
             </div>
              
+             <div className="error">
+                { errorMessage }
+             </div>
              <br/>
             <button name="startQuiz" onClick={onNextClick}>Start Quiz</button>
         </div>
